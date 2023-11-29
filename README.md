@@ -54,8 +54,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 ## Screenshots of Launch of 
+![Image of Website](assest\Codingquestion.jpg)
 
-### Git push to Github
 
 
-### Final commit to Github Repository
+
