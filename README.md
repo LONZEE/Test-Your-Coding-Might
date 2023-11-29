@@ -55,8 +55,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 ## Screenshots of Launch of 
 ![Alt text](assest\Codingquestion.jpg)
-
-
+<img src="assest\Codingquestion.jpg" width="128"/>
 
 
 
