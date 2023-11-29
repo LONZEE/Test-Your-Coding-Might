@@ -34,6 +34,7 @@ function startQuiz() {
     displayQuestion();
     var startButton = document.getElementById("submit-btn");
     startButton.style.display = "none";
+    
     timerInterval = setInterval(updateTimer, 1000);
 
 }
@@ -54,5 +55,29 @@ function displayQuestion() {
         choicesContainer.appendChild(choiceElement);
     });
 }
+function selectAnswer(choiceIndex) {    // check if the selected answer is correct
+    const selectedChoice = questions[currentQuestionIndex].choices[choiceIndex];
+    const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+    questions[currentQuestionIndex].selectedAnswer = selectedChoice;
+
+    if (selectedChoice === correctAnswer) {   // if correct, display next question
+        alert("Correct!");
+        console.log("Correct!");
+    } else {
+        alert("Incorrect!");
+        console.log("Incorrect!");
+        timeLeft -= 10;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
 
 document.getElementById("submit-btn").addEventListener("click", startQuiz);
