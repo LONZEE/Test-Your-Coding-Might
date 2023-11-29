@@ -1,4 +1,4 @@
-const questions = [
+const questions = [   // array of questions
     {
         question: "1. Which of the following is not javascript data types?",
         choices: ["Null type", "Undefined type", "Number type", "All of the mentioned"],
@@ -30,31 +30,31 @@ const questions = [
 let currentQuestionIndex = 0;  // index of the current question
 let timeLeft = 60;
 let timerInterval;
-var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+var highScores = JSON.parse(localStorage.getItem('highScores')) || [];  // get high scores from local storage
 
-function startQuiz() {
+function startQuiz() {  // start the quiz
     displayQuestion();
-    var startButton = document.getElementById("submit-btn");
-    startButton.style.display = "none";
+    var startButton = document.getElementById("submit-btn");    // get the start button
+    startButton.style.display = "none"; // hide the start button
     
-    timerInterval = setInterval(updateTimer, 1000);
+    timerInterval = setInterval(updateTimer, 1000); // start the timer
 
 }
 
-function displayQuestion() {
-    const questionContainer = document.getElementById("question-container");    // get the question container 
+function displayQuestion() {   // display the current question, get the question container, and display each choice
+    const questionContainer = document.getElementById("question-container");    
     const choicesContainer = document.getElementById("choices-container");
 
     questionContainer.textContent = questions[currentQuestionIndex].question;
     choicesContainer.innerHTML = "";
 
-    questions[currentQuestionIndex].choices.forEach((choice, index) => {    // display each choice
-        const choiceElement = document.createElement("div");
-        choiceElement.classList.add("choice");
+    questions[currentQuestionIndex].choices.forEach((choice, index) => {    
+        const choiceElement = document.createElement("div");   // create a div for each choice
+        choiceElement.classList.add("choice"); // add the choice class to each div
         choiceElement.textContent = `${choice}`;
         choiceElement.setAttribute("data-index", currentQuestionIndex);
         choiceElement.addEventListener("click", () => selectAnswer(index));
-        choicesContainer.appendChild(choiceElement);
+        choicesContainer.appendChild(choiceElement);    
     });
 }
 function selectAnswer(choiceIndex) {    // check if the selected answer is correct
@@ -80,7 +80,7 @@ function selectAnswer(choiceIndex) {    // check if the selected answer is corre
         endQuiz();
     }
 }
-function updateTimer() {
+function updateTimer() {   // update the timer
     const timerElement = document.getElementById("timer");
     timerElement.textContent = timeLeft;
 
