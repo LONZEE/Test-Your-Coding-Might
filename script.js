@@ -26,6 +26,10 @@ const questions = [
     },
 ];
 
+let currentQuestionIndex = 0;  // index of the current question
+let timeLeft = 60;
+let timerInterval;
+
 function startQuiz() {
     displayQuestion();
     var startButton = document.getElementById("submit-btn");
@@ -37,5 +41,18 @@ function startQuiz() {
 function displayQuestion() {
     const questionContainer = document.getElementById("question-container");    // get the question container 
     const choicesContainer = document.getElementById("choices-container");
+
+    questionContainer.textContent = questions[currentQuestionIndex].question;
+    choicesContainer.innerHTML = "";
+
+    questions[currentQuestionIndex].choices.forEach((choice, index) => {    // display each choice
+        const choiceElement = document.createElement("div");
+        choiceElement.classList.add("choice");
+        choiceElement.textContent = `${choice}`;
+        choiceElement.setAttribute("data-index", currentQuestionIndex);
+        choiceElement.addEventListener("click", () => selectAnswer(index));
+        choicesContainer.appendChild(choiceElement);
+    });
 }
+
 document.getElementById("submit-btn").addEventListener("click", startQuiz);
