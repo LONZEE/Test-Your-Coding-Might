@@ -112,4 +112,4 @@ function endQuiz() {
 }
 
 
-document.getElementById("submit-btn").addEventListener("click", startQuiz);
+document.getElementById("submit-btn").addEventListener("click", startQuiz);     // add event listener to start button
