@@ -19,4 +19,15 @@ h1{
 
 #question-container {
         margin-bottom: 30px;
-}    
+}
+
+#submit-btn {
+    background-color: #0635f1;
+    color: #ffffff;
+    height: 50px;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
