@@ -42,9 +42,16 @@ THEN I can save my initials and score
 * line 94 ends the quiz
 
 Additional Resources: [Links to supplementary materials]
-## Contributers
-Youtuber I used to help me is style: https://www.youtube.com/@KevinPowell
-
+## Refrences
+Youtuber I used to help me in style sheet: https://www.youtube.com/@KevinPowell
+* getElement reference
+https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+* createElement
+https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+* textContent
+https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+* appendChild
+https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 ## Screenshots of Launch of 
 
