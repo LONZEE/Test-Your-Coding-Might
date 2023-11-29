@@ -31,3 +31,30 @@ h1{
     cursor: pointer;
     font-size: 30px;
 }
+.choice {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000000;
+}
+
+.choice:hover {
+    background-color:#f90000;
+    color: #fff;
+    animation: grow-and-shrink 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes grow-and-shrink { /*https://www.joshwcomeau.com/animation/keyframe-animations/ */
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
