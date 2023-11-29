@@ -2,7 +2,7 @@ const questions = [
     {
         question: "1. Which of the following is not javascript data types?",
         choices: ["Null type", "Undefined type", "Number type", "All of the mentioned"],
-        correctAnswer: " All of the mentioned"
+        correctAnswer: "All of the mentioned"
     },
     {
         question: "2. What is the basic difference between JavaScript and Java?",
@@ -12,7 +12,7 @@ const questions = [
     {
         question: "3. Arrays in JavaScript are defined by which of the following statements?",
         choices: ["It is an ordered list of values", "It is an ordered list of objects", "It is an ordered list of string", " It is an ordered list of functions"],
-        correctAnswer: ""
+        correctAnswer: "It is an ordered list of values"
     },
     {
         question: "4. JavaScript is the programming language of the _____.",
@@ -25,10 +25,12 @@ const questions = [
         correctAnswer: "It is a scripting language used to make the website interactive"
     },
 ];
+// https://www.sanfoundry.com/1000-javascript-questions-answers/ is where I got these questions from
 
 let currentQuestionIndex = 0;  // index of the current question
 let timeLeft = 60;
 let timerInterval;
+var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 function startQuiz() {
     displayQuestion();
@@ -88,6 +90,25 @@ function updateTimer() {
     }
 
     timeLeft--;
+}
+function endQuiz() {
+    clearInterval(timerInterval);
+
+    const timeRemaining = timeLeft > 0 ? timeLeft : 0;
+    let highScore = Math.max(...highScores);
+
+    if (timeRemaining > highScore) {
+        highScore = timeRemaining;
+        highScores.push(highScore);
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+    }
+
+    const quizContainer = document.querySelector(".quiz-container");
+    quizContainer.innerHTML = `
+        <h1>Quiz Complete!</h1>
+        <p>Time Remaining: ${timeRemaining} seconds</p>
+        <p>High Scores: ${highScores.join(', ')}</p>
+    `;
 }
 
 
