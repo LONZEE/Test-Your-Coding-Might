@@ -13,3 +13,10 @@ h1{
     text-align: center;
     color: #000000;
     }
+#quiz-container {
+        margin-bottom: 30px;
+}    
+
+#question-container {
+        margin-bottom: 30px;
+}    
