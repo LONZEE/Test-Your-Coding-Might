@@ -78,6 +78,17 @@ function selectAnswer(choiceIndex) {    // check if the selected answer is corre
         endQuiz();
     }
 }
+function updateTimer() {
+    const timerElement = document.getElementById("timer");
+    timerElement.textContent = timeLeft;
+
+    if (timeLeft === 0) {
+        endQuiz();
+        clearInterval(timerInterval);
+    }
+
+    timeLeft--;
+}
 
 
 document.getElementById("submit-btn").addEventListener("click", startQuiz);
